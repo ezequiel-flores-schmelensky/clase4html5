@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejercicio 19</title>
+
+		<style>
+			body {
+				background: url(../imagenes/fondo_granulado.png);
+			}
+
+			#contenedor {
+				width: 800px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			#contenido {
+				margin-left: 185px;
+			}
+
+			#menu-imagenes {
+				float: left;
+				width: 180px;
+			}
+
+			.preview {
+				cursor: hand;
+				cursor: pointer;
+				margin-bottom: 20px;
+			}
+
+		</style>
+		
+		<script src="../javascript/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript">
+		$(function(){
+		   //obtengo el objeto preview
+		   var img_preview = $(".preview");
+		   //escucho el click en las imagenes de preview
+		   img_preview.click(function(evento) {
+		       //por medio del objeto evento obtengo la ruta del evento
+		       var ruta = $(evento.target).attr("data-src-imagen");
+		       //obtengo la ruta de la imagen normal
+		       var imagen = $("#imagen-normal");
+		       //hago la animacion
+		       imagen.fadeOut("slow", function(){
+		              //esa ruta se la asigno a la imagen-normal
+                      imagen.attr("src", ruta);  
+		       });
+		       //aparece la nueva imagen
+		       imagen.fadeIn("slow");
+		   });
+		 });
+		</script>
+	</head>
+	<body>
+
+		<div id="contenedor">
+			<div id="menu-imagenes">
+				<img class="preview" src="../imagenes/imagen1_preview.jpg" data-src-imagen="../imagenes/imagen1.jpg" />
+				<img class="preview" src="../imagenes/imagen2_preview.jpg" data-src-imagen="../imagenes/imagen2.jpg" />
+				<img class="preview" src="../imagenes/imagen3_preview.jpg" data-src-imagen="../imagenes/imagen3.jpg" />
+				<img class="preview" src="../imagenes/imagen4_preview.jpg" data-src-imagen="../imagenes/imagen4.jpg" />
+				<img class="preview" src="../imagenes/imagen5_preview.jpg" data-src-imagen="../imagenes/imagen5.jpg" />
+			</div>
+
+			<div id="contenido">
+				<img id="imagen-normal" src="../imagenes/imagen1.jpg"  />
+			</div>
+
+		</div>
+
+	</body>
+</html>

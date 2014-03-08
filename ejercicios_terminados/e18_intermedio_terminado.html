@@ -1,0 +1,61 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			#parrafo-click {
+				margin-left: auto;
+				margin-right: auto;
+				border-style: solid;
+				border-color: black;
+				width: 500px;
+			}
+        </style>
+
+        <script src="../javascript/jquery-1.10.2.min.js"></script>
+        <script>
+        $(function(){
+            //obtengo el boton, la imagen y el parrafo
+            var boton = $("#boton-animar");
+            var imagen = $("img");
+            var parrafo = $("#estado");
+            //Escucho el click en el boton
+            boton.click(function(){
+                //podemos hacer var esFeliz = true o false
+                if(parrafo.html() === "Homero Feliz!!! :)")
+                    {
+                        imagen.attr("src", "../imagenes/sad_homer.jpg");
+                        parrafo.html("Homero Triste"); 
+                    }
+                    else
+                    {
+                        imagen.attr("src", "../imagenes/happy_homer.jpg");
+                        parrafo.html("Homero Feliz!!! :)");                   
+                    }
+              });
+        });
+        </script>
+
+    </head>
+    <body>
+
+        <p>
+            <button id="boton-animar" >
+                Animar!
+            </button>
+        </p>
+
+        <div id="contenedor">
+            <img src="../imagenes/sad_homer.jpg" />
+            <p id="estado">
+                Homero Triste
+            </p>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript</title>
+        <meta charset="UTF-8"/>
+        <script>
+            /*Un variable*/
+        //   var mensaje = "Mi nombre es ";
+           /*un objeto en notacion JSON*/
+          /* var persona = {
+               nombre: "Daniela",
+               edad: 30,
+               ocupacion: "instructora"
+           };*/
+           /*una funcion anonima*/
+       /*    var imprime = function(alguien){
+               document.write("<p>Nombre: " + alguien.nombre + "</p>");
+               document.write("<p>Edad: " + alguien.edad + "</p>");
+               document.write("<p>Ocupacion: " + alguien.ocupacion + "</p>");
+           };
+           */
+           /*Quiero que imprima los dato del objeto persona*/
+          //imprime(persona);
+          
+          /*Un funcion que recibe una funcion*/
+      /*   var suma = function(x, y){
+           return x + y;
+         };*/
+         
+         /*funciones que regresan algo*/
+        /* var multiplicacion = function (a, b){
+           return  a * b;
+         };*/
+         
+         var operacion = function(unaFuncion){
+             return unaFuncion(4,5);
+         };
+         
+         var resultado = operacion(suma);
+         document.write("<p>El resultado es " + resultado + "</p>");
+         var resultado = operacion(multiplicacion);
+         document.write("<p>Ahora el resultado es " + resultado + "</p>");
+        </script>
+        
+    </head>
+    <body>
+        <h1>Aprendieno JavaScript</h1>
+    </body>
+</html>
